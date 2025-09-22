@@ -30,7 +30,8 @@ if use_wav_file
   wav_fn = '../test_data/binaural_test.wav';
 
   wav_fn
-  file_signal = wavread(wav_fn);
+%  file_signal = wavread(wav_fn);
+  file_signal = audioread(wav_fn);
   file_signal = file_signal(:, 1);  % Mono test only.
 else
   % A tone complex.
