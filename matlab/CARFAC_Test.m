@@ -52,6 +52,23 @@ status = status | test_multiaural_silent_channel_non_decimating(do_plots);
 status = status | test_multiaural_carfac(do_plots);
 status = status | test_spike_rates(do_plots);
 report_status(status, 'CARFAC_Test', 1)
+
+% save all the plots:
+
+F = findobj('Type', 'figure')
+
+for i = 1:length(F)
+    n = F(i).Number;
+
+    figure(n)
+    filename = "../../../png/matlab/matlab_figure_" + n
+    
+
+    print( '-dpng', '-r600', filename ) ;
+
+end
+
+
 return
 
 
